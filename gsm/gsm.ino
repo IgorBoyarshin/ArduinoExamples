@@ -9,8 +9,8 @@ const bool INPUT_CMD = false;
 void setup() {
   initSim();
 
-  const String telephoneNumber = "+380506527183";
-  const String message = "ku";
+  const String telephoneNumber = "+380965128877";
+  const String message = "Test message";
   sendSMS(telephoneNumber, message);
 }
 
@@ -30,7 +30,7 @@ void initSim() {
 
 
 void sendSMS(String phone, String message) {
-  // Prepare to receive message text(after ">"
+  // Prepare to input message text(after ">")
   sendATCommand("AT+CMGS=\"" + phone + "\"", true);
   // Enter message text
   sendATCommand(message + (String)((char)0x1A), true); // must end with 0x1A
